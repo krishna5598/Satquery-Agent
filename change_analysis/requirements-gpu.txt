@@ -1,0 +1,17 @@
+# SatQuery AI - Change Analysis Module (GPU / Cloud Inference)
+# Optional extensions for high-throughput GPU inference with real ChangeCLIP / ChangeChat checkpoints.
+
+# PyTorch with CUDA 11.8 or 12.1+
+# Example: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+
+# Core requirements
+-r requirements.txt
+
+# Acceleration & Quantization
+accelerate>=0.28.0
+bitsandbytes>=0.43.0; platform_system != "Windows"  # 4-bit / 8-bit quantization for VLM LLM backbones
+
+# OpenMMLab (Only for legacy ChangeCLIP native mmsegmentation runners on Linux x86_64)
+# mmengine>=0.8.4
+# mmcv>=2.0.0
+# mmsegmentation>=1.0.0

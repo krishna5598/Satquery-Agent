@@ -1,0 +1,47 @@
+# SatQuery AI - Change Analysis Configuration File
+# Controls model selection, hardware device, preprocessing, and output options.
+
+system:
+  mode: "auto"             # "auto", "real", or "fallback"
+  device: "auto"           # "auto", "cuda", "cpu", "mps"
+  seed: 42
+  log_level: "INFO"
+
+paths:
+  output_dir: "outputs"
+  checkpoints_dir: "checkpoints"
+  examples_dir: "examples"
+
+preprocessing:
+  target_size: [256, 256]
+  enforce_square: false
+  max_dimension: 1024
+  check_nan_inf: true
+  verify_crs_bounds: true
+  clip_mean: [0.485, 0.456, 0.406]
+  clip_std: [0.229, 0.224, 0.225]
+
+changeclip:
+  model_name: "ChangeCLIP"
+  backbone: "RN50"
+  checkpoint_path: "checkpoints/changeclip_levir.pth"
+  threshold: 0.5
+  allow_cpu_inference: true
+
+changechat:
+  model_name: "ChangeChat"
+  model_base: "lmsys/vicuna-7b-v1.5"
+  checkpoint_path: "checkpoints/changechat_lora"
+  max_new_tokens: 256
+  temperature: 0.2
+  allow_cpu_inference: false   # 7B parameter LLMs are memory-prohibitive on 8GB CPU
+
+fallback:
+  algorithm: "deterministic_spectral_structural"
+  ssim_weight: 0.35
+  spectral_weight: 0.65
+  otsu_thresholding: true
+  fixed_threshold: 0.25
+  morph_kernel_size: 3
+  min_cluster_pixels: 30
+  calculate_indices: true      # Calculates delta-NDVI and delta-NDWI

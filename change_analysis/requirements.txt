@@ -1,0 +1,19 @@
+# SatQuery AI - Change Analysis Module (Core / CPU / Local)
+torch>=2.2.0
+torchvision>=0.17.0
+numpy>=1.26.0
+opencv-python>=4.8.0
+pillow>=10.0.0
+scikit-image>=0.22.0
+scikit-learn>=1.4.0
+scipy>=1.11.0
+matplotlib>=3.8.0
+tifffile>=2023.7.0
+pyyaml>=6.0.0
+pydantic>=2.0.0
+fastapi>=0.110.0
+uvicorn>=0.28.0
+psutil>=5.9.0
+requests>=2.31.0
+pytest>=8.0.0
+transformers>=4.38.0

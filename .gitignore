@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+.env
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Outputs and Checkpoints
+change_analysis/checkpoints/*.pth
+change_analysis/checkpoints/*.pt
+change_analysis/checkpoints/*.bin
+change_analysis/checkpoints/*.safetensors
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
